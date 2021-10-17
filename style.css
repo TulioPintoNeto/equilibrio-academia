@@ -1,0 +1,257 @@
+:root {
+    --red: #a61b1b;
+    --red-transparent: rgba(166, 27, 27, 0);
+    --blue: #2b1ba6;
+    --black: #0a1010;
+    --light-black: rgba(15, 23, 23, 0.97);
+    --white: #e9e9e9;
+    --white-transparent: rgba(224, 224, 224, 0);
+    --white-hover: #a89292;
+    --animation-duration: 0.3s;
+}
+
+html,
+body {
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 4.5rem;
+    text-shadow: 0 0 4px black;
+}
+
+h2 {
+    margin: 16px 0 8px;
+}
+
+a {
+    color: var(--white);
+    transition: color var(--animation-duration) ease-in-out;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--white-hover);
+    text-decoration: none;
+}
+
+p a {
+    color: var(--blue);
+    font-weight: 600;
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+p a:hover {
+    color: var(--light-black);
+    text-decoration: underline;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+i {
+    color: var(--red);
+    font-size: 4.3rem;
+}
+
+img {
+    width: 100%;
+}
+
+.on-scroll-fade {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.on-scroll-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.common-padding {
+    padding: 60px 0;
+}
+
+.back-black {
+    background-color: var(--black);
+}
+
+.back-white {
+    background-color: var(--white);
+    color: var(--light-black);
+}
+
+.color-red {
+    color: var(--red);
+}
+
+.red-border {
+    min-width: 420px;
+    height: 2px;
+    background: var(--red);
+    background: linear-gradient(
+        90deg,
+        var(--red-transparent) 0%,
+        var(--red) 25%,
+        var(--red) 75%,
+        var(--red-transparent) 100%
+    );
+    margin: 16px 0 24px;
+    transition: min-width 2s ease-in-out;
+}
+
+.red-border.on-load-change,
+.on-scroll-fade:not(.on-scroll-show) .red-border {
+    min-width: 0;
+}
+
+.black-background-filter {
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+}
+
+/* HEADER */
+
+header {
+    height: 100%;
+}
+
+.appear-on-load,
+.appear-on-load-1 {
+    display: none;
+}
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+}
+
+#navbar-row {
+    background-color: transparent;
+    transition: background-color var(--animation-duration) ease-in-out;
+}
+
+#navbar-row.scrolled {
+    background-color: var(--light-black);
+    box-shadow: 0 0 6px rgb(9, 9, 9);
+}
+
+#navbar-row img {
+    margin: 15px 0;
+    max-width: 130px;
+    transition: max-width var(--animation-duration) ease-in-out;
+}
+
+#navbar-row.scrolled img {
+    margin: 15px 0;
+    max-width: 80px;
+}
+
+#navbar-row li {
+    font-size: 1.05rem;
+    position: relative;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom var(--animation-duration) ease-in-out;
+}
+
+#navbar-row li:hover {
+    border-bottom: 1px solid var(--white-hover);
+}
+
+#front-cover {
+    background-attachment: fixed;
+    background-image: url("images/header-background-image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#front-cover h1 {
+    position: relative;
+}
+
+/* MAIN */
+
+#about img {
+    box-shadow: 0 0 5px black;
+}
+
+#about li {
+    margin-bottom: 8px;
+}
+
+#about .col-md-6 {
+    padding: 0 60px;
+}
+
+#teachers .teacher-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: center;
+}
+
+#teachers .img-outer-box {
+    border-radius: 50%;
+    border: 2px solid var(--red);
+    margin-bottom: 24px;
+}
+
+#teachers .img-box {
+    border-radius: 50%;
+    border: 6px solid transparent;
+    overflow: hidden;
+    width: 267px;
+}
+
+#teachers .description-collapse:not(.show) {
+    height: 72px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#teachers button {
+    background: transparent;
+    border: none;
+    font-size: 0.87rem;
+    height: 40px;
+    width: 100%;
+}
+
+#teachers button:focus {
+    outline: none;
+}
+
+#teachers button.collapsed {
+    box-shadow: 0 0 24px 24px var(--white);
+}
+
+#teachers button i {
+    font-size: 1rem;
+}
+
+#plans {
+    /* background-attachment: fixed; */
+    background-image: url("images/plans-background-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+
+#visit-us iframe {
+    width: 100%;
+}
+
+/* FOOTER */
