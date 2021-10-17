@@ -167,6 +167,11 @@ header {
     border-bottom: 1px solid var(--white-hover);
 }
 
+#navbar-row i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
 #front-cover {
     background-attachment: fixed;
     background-image: url("images/header-background-image.png");
@@ -223,7 +228,6 @@ header {
 #teachers button {
     background: transparent;
     border: none;
-    font-size: 0.87rem;
     height: 40px;
     width: 100%;
 }
@@ -237,7 +241,13 @@ header {
 }
 
 #teachers button i {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    transform: rotate(180deg);
+    transition: all var(--animation-duration) ease-in-out;
+}
+
+#teachers button.collapsed i {
+    transform: rotate(0);
 }
 
 #plans {
@@ -255,3 +265,31 @@ header {
 }
 
 /* FOOTER */
+
+#footer span:not(.title) {
+    font-size: 0.8rem;
+}
+
+#footer i {
+    font-size: 2rem;
+    color: var(--red);
+    transition: all var(--animation-duration) ease-in-out;
+    opacity: 1;
+}
+
+#footer i:hover {
+    opacity: 0.5;
+}
+
+#footer #developed-by {
+    font-size: 0.63rem;
+    color: #444;
+}
+
+#footer #developed-by a {
+    color: #444;
+}
+
+#footer #developed-by a:hover {
+    color: #888;
+}
