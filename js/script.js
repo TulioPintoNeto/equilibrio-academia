@@ -1,3 +1,5 @@
+var firstClick = true;
+
 $(() => main());
 
 const main = () => {
@@ -9,12 +11,19 @@ const main = () => {
 };
 
 const closeNavbarWhenClickOnItem = () => {
-    const navLinks = document.querySelectorAll(".nav-item");
-    const menuToggle = document.getElementById("navbarNav");
-    const bsCollapse = new bootstrap.Collapse(menuToggle);
-    navLinks.forEach((l) => {
-        l.addEventListener("click", () => {
-            bsCollapse.toggle();
+    const button = document.getElementById("navbar-button-toggle");
+    button.addEventListener("click", () => {
+        if (!firstClick) return;
+
+        firstClick = false;
+
+        const navLinks = document.querySelectorAll(".nav-item");
+        const menuToggle = document.getElementById("navbarNav");
+        const bsCollapse = new bootstrap.Collapse(menuToggle);
+        navLinks.forEach((l) => {
+            l.addEventListener("click", () => {
+                bsCollapse.toggle();
+            });
         });
     });
 };
