@@ -1,0 +1,28 @@
+@media (max-width: 992px) {
+    .container {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .red-border {
+        min-width: 80vw;
+    }
+
+    .small-devices-vertical-padding {
+        height: 40px;
+        width: 1px;
+    }
+
+    #navbar-row {
+        background-color: var(--semi-transparent-black) !important;
+    }
+
+    #navbar img {
+        max-width: 100px;
+    }
+
+    #plans #plans-cards .col-lg-3 {
+        padding-right: 8%;
+        padding-left: 8%;
+    }
+}
